@@ -19,17 +19,17 @@ export -f rename-file
 
 SED_PATTERN="s/__PROJECT_NAME__/$PROJECT_NAME/g"
 
-echo "Creating new project '$PROJECT_NAME'"
+echo "✅ Creating new project '$PROJECT_NAME'"
 
 find . -depth -not -path . -not -path "*.git*" | xargs -I{} /bin/bash -c 'rename-file "'"$SED_PATTERN"'" {}'
 grep __PROJECT_NAME__ -rl . --exclude-dir=.git --exclude="$0" | xargs sed -i '' "$SED_PATTERN"
 
 mv README.md{.template,}
 
-echo "Removing this script itself"
+echo "✅ Removing this script itself"
 
 rm $0
 
-echo "Adding init commit"
+echo "✅ Adding init commit"
 git add -A
 git commit -m"Init '$PROJECT_NAME'"
