@@ -1,0 +1,16 @@
+# __PROJECT_NAME__
+
+A description of this project.
+
+## Getting Started
+
+```sh
+npm install
+npm run start
+```
+
+## Testing
+
+```sh
+swift test
+```
