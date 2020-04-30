@@ -1,0 +1,23 @@
+name: Build and test
+on: [push, pull_request]
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-10.15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build
+        run: .ci/build.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+  test:
+    name: Run test
+    runs-on: macOS-10.15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build
+        run: .ci/test.sh
