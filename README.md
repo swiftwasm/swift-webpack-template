@@ -1,3 +1,7 @@
+**⚠️ No longer maintained. Please use [`carton init`](https://github.com/swiftwasm/carton) instead**
+
+-----
+
 # swift-webpack-template
 
 Kickstart your Swift, WebAssembly and Webpack project.
